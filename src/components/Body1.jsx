@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import img1 from "../images/img1.jpg";
 
@@ -12,26 +12,42 @@ const HeroSection = () => {
 
   const PASSWORD = "MuhammadAhmadFridi@511";
 
+  // Load image from localStorage on component mount
+  useEffect(() => {
+    const savedImg = localStorage.getItem("heroImageBase64");
+    if (savedImg) {
+      setCurrentImg(savedImg);
+    }
+  }, []);
+
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
     setError("");
   };
 
+  // Convert image file to Base64 and save
   const handleSave = () => {
-    if (password === PASSWORD) {
-      if (selectedFile) {
-        const imageUrl = URL.createObjectURL(selectedFile);
-        setCurrentImg(imageUrl);
-        setError("");
-        setIsEditing(false);
-        setPassword("");
-        setSelectedFile(null);
-      } else {
-        setError("Please choose a file first.");
-      }
-    } else {
+    if (password !== PASSWORD) {
       setError("Incorrect password. Image not changed.");
+      return;
     }
+
+    if (!selectedFile) {
+      setError("Please choose a file first.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64Data = reader.result;
+      setCurrentImg(base64Data);
+      localStorage.setItem("heroImageBase64", base64Data);
+      setError("");
+      setIsEditing(false);
+      setPassword("");
+      setSelectedFile(null);
+    };
+    reader.readAsDataURL(selectedFile);
   };
 
   const openModal = (imgUrl) => setModalImg(imgUrl);
@@ -63,7 +79,7 @@ const HeroSection = () => {
         >
           <img
             src={currentImg}
-            alt="Muhammad Ahmad Afridi"
+            alt="Muhammad Ahmad Fridi"
             className="w-full h-full object-cover"
           />
         </div>
@@ -106,7 +122,7 @@ const HeroSection = () => {
           <div className="relative">
             <button
               onClick={closeModal}
-              className="absolute top-[-0.8rem] right-[-0.3rem] text-white rounded-full p-2 text-3xl  hover:text-white transition"
+              className="absolute top-[-0.8rem] right-[-0.3rem] text-white rounded-full p-2 text-3xl hover:text-white transition"
               aria-label="Close Modal"
             >
               &times;
