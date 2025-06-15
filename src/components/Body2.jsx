@@ -134,7 +134,7 @@ const About = () => {
                   <span className="mt-2 text-sm">Microsoft (World)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo.svg" alt="Meta" className="w-12 h-12 object-contain" />
+                  <img src="https://cdn-icons-png.flaticon.com/512/2504/2504903.png" alt="Meta" className="w-12 h-12 object-contain" />
                   <span className="mt-2 text-sm">Meta (World)</span>
                 </div>
               </div>
@@ -143,15 +143,15 @@ const About = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Systems_Limited_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
+                  <img src="https://companieslogo.com/img/orig/SYS.PK-95e4fe9e.png?t=1633510547" alt="Systems Limited" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">Systems Limited (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://www.10pearls.com/wp-content/uploads/2021/01/10Pearls-Logo.png" alt="10Pearls" className="w-20 h-10 object-contain" />
+                  <img src="https://pbs.twimg.com/profile_images/1419934379616759811/kLoNFzrR_400x400.jpg" alt="10Pearls" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">10Pearls (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Netsol_logo.svg/2560px-Netsol_logo.svg.png" alt="NetSol" className="w-20 h-10 object-contain" />
+                  <img src="https://seeklogo.com/images/N/netsol-technologies-logo-DBFEEA63D3-seeklogo.com.png" alt="NetSol" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">NetSol (Pakistan)</span>
                 </div>
               </div>
