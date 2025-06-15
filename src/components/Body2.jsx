@@ -122,7 +122,10 @@ const About = () => {
                 Top Companies
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                🌍 Global and Pakistani top companies list removed as per request.
+                🌍 <strong>Global:</strong> Google, Microsoft, Amazon, Meta, Apple.
+              </p>
+              <p className="text-lg md:text-xl leading-relaxed text-gray-200 mt-2">
+                🇵🇰 <strong>Pakistan:</strong> Systems Limited, NetSol Technologies, 10Pearls, Arbisoft, CureMD.
               </p>
             </div>
           )}
