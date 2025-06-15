@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import img1 from "../images/img88.jpg";
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -198,8 +197,8 @@ const About = () => {
 
       <div className="h-full bg-[#1b1a1b] flex flex-col mt-0 items-center p-5 md:p-10 text-white">
         <img
-          src={img1}
-          alt="Muhammad Ahmad Fridi"
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          alt="User Icon"
           className="w-40 h-40 md:w-60 md:h-60 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
         />
 
