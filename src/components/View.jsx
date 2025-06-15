@@ -27,7 +27,7 @@ const ProjectManager = () => {
         <img
           src={img1}
           alt="Muhammad Ahmad Fridi"
-          className="w-40 h-40 md:w-48 md:h-48  rounded-full object-contain  mb-4 shadow-lg border-4 border-white"
+          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-contain mb-4 shadow-lg border-4 border-white"
         />
 
         <h1 className="text-3xl md:text-4xl font-bold mb-3">
@@ -41,7 +41,7 @@ const ProjectManager = () => {
           React, Tailwind CSS, and JavaScript. Many more projects are in
           progress, as I continue to learn and grow in this fast-moving tech
           world. My mission is to create impactful digital experiences that
-          solve real-world problems
+          solve real-world problems.
         </p>
       </div>
 
@@ -63,17 +63,14 @@ const ProjectManager = () => {
                 }}
                 title={`Open ${project.name}`}
               >
-                {project.image ? (
+                {project.image && (
                   <img
                     src={project.image}
                     alt={project.name}
                     className="w-14 h-14 object-cover rounded-lg border border-gray-700"
                   />
-                ) : (
-                  <div className="w-40 h-45 bg-gray-600 rounded-lg flex items-center justify-center text-gray-400 text-xl">
-                    📁
-                  </div>
                 )}
+
                 <span className="text-lg font-semibold text-white">
                   {project.name}
                 </span>
