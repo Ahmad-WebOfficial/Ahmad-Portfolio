@@ -109,8 +109,12 @@ const About = () => {
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
                 🌐 Web Development ki demand 📱 Mobile Development se zyada hai. Magar mobile ka scope bhi barh raha hai — khaaskar Android/iOS apps ke liye.
               </p>
-              <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200">
-                Ratio: <span className="text-green-400 font-semibold">60% Web</span> vs <span className="text-blue-400 font-semibold">40% Mobile</span>.
+              <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200 flex items-center justify-center gap-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/2721/2721623.png" alt="Web Icon" className="w-6 h-6" />
+                <span className="text-green-400 font-semibold">60% Web</span>
+                vs
+                <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Mobile Icon" className="w-6 h-6" />
+                <span className="text-blue-400 font-semibold">40% Mobile</span>
               </p>
             </div>
           ) : (
@@ -124,15 +128,15 @@ const About = () => {
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
                   <img src="https://cdn.worldvectorlogo.com/logos/google-icon.svg" alt="Google" className="w-12 h-12" />
-                  <span className="mt-2 text-sm">Google</span>
+                  <span className="mt-2 text-sm">Google (World)</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <img src="https://cdn.worldvectorlogo.com/logos/microsoft.svg" alt="Microsoft" className="w-12 h-12" />
-                  <span className="mt-2 text-sm">Microsoft</span>
+                  <span className="mt-2 text-sm">Microsoft (World)</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <img src="https://cdn.worldvectorlogo.com/logos/meta-2.svg" alt="Meta" className="w-12 h-12" />
-                  <span className="mt-2 text-sm">Meta</span>
+                  <span className="mt-2 text-sm">Meta (World)</span>
                 </div>
               </div>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
@@ -141,15 +145,15 @@ const About = () => {
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
                   <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Systems_Limited_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
-                  <span className="mt-1 text-sm">Systems Limited</span>
+                  <span className="mt-1 text-sm">Systems Limited (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <img src="https://www.10pearls.com/wp-content/uploads/2021/01/10Pearls-Logo.png" alt="10Pearls" className="w-20 h-10 object-contain" />
-                  <span className="mt-1 text-sm">10Pearls</span>
+                  <span className="mt-1 text-sm">10Pearls (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Netsol_logo.svg/2560px-Netsol_logo.svg.png" alt="NetSol" className="w-20 h-10 object-contain" />
-                  <span className="mt-1 text-sm">NetSol</span>
+                  <span className="mt-1 text-sm">NetSol (Pakistan)</span>
                 </div>
               </div>
             </div>
@@ -206,12 +210,4 @@ const About = () => {
         <p className="text-center text-gray-300 max-w-2xl mb-10">
           I'm a passionate developer with a strong ambition to become a
           full-stack developer. I’m currently sharpening my skills across both
-          front-end and back-end technologies. My future plan is to build my own
-          software house and contribute to impactful digital solutions.
-        </p>
-      </div>
-    </>
-  );
-};
-
-export default About;
+          front-end and back-end technologies. My future plan is
