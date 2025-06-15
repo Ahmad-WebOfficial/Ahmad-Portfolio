@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img222 from "../images/img88.jpg";
+import img222 from "../images/img111.png";
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
