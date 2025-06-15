@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import img1 from "../images/img77.jpg";
 import Head from "../components/Head";
 import Foter from "../components/Foter";
+
 const ProjectManager = () => {
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
       name: "Nexus News",
       url: "https://perfect-nexcent.vercel.app/",
@@ -15,60 +16,6 @@ const ProjectManager = () => {
       image: null,
     },
   ]);
-
-  const [adding, setAdding] = useState(false);
-  const [name, setName] = useState("");
-  const [url, setUrl] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [image, setImage] = useState(null);
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (!file) {
-      setImage(null);
-      return;
-    }
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const removeImage = () => {
-    setImage(null);
-  };
-
-  const handleAddProject = () => {
-    if (password !== "MuhammadAhmadFridi@511") {
-      setError("Incorrect password!");
-      return;
-    }
-    if (!name.trim() || !url.trim()) {
-      setError("Please enter both project name and URL.");
-      return;
-    }
-    setProjects((prev) => [
-      ...prev,
-      { name: name.trim(), url: url.trim(), image },
-    ]);
-    setName("");
-    setUrl("");
-    setPassword("");
-    setError("");
-    setImage(null);
-    setAdding(false);
-  };
-
-  const handleDeleteProject = (index) => {
-    const enteredPassword = prompt("Enter password to delete project:");
-    if (enteredPassword !== "MuhammadAhmadFridi@511") {
-      alert("Incorrect password!");
-      return;
-    }
-    setProjects((prev) => prev.filter((_, i) => i !== index));
-  };
 
   return (
     <>
@@ -101,95 +48,6 @@ const ProjectManager = () => {
       <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-8">Project Manager</h1>
 
-        {!adding && (
-          <button
-            onClick={() => setAdding(true)}
-            className="mb-6 bg-green-600 hover:bg-green-700 px-5 py-2 rounded text-white font-semibold"
-          >
-            Add New Project
-          </button>
-        )}
-
-        {adding && (
-          <div className="bg-gray-800 p-6 rounded shadow-md w-full max-w-md relative">
-            <button
-              onClick={() => {
-                setAdding(false);
-                setError("");
-                setName("");
-                setUrl("");
-                setPassword("");
-                setImage(null);
-              }}
-              className="absolute top-3 right-4 text-2xl font-bold text-red-500 hover:text-red-700 select-none"
-              title="Cancel"
-            >
-              ×
-            </button>
-
-            <h2 className="text-xl font-semibold mb-4 text-green-400">
-              Add Project
-            </h2>
-            <input
-              type="text"
-              placeholder="Project Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full mb-3 px-3 py-2 rounded bg-gray-700 text-white"
-            />
-            <input
-              type="text"
-              placeholder="Project URL"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              className="w-full mb-3 px-3 py-2 rounded bg-gray-700 text-white"
-            />
-
-            <div className="mb-3">
-              <label className="block mb-1">Project Image (optional):</label>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                className="text-gray-900"
-              />
-              {image && (
-                <div className="mt-2 flex items-center space-x-3">
-                  <img
-                    src={image}
-                    alt="Project preview"
-                    className="w-16 h-16 object-cover rounded-lg"
-                  />
-                  <button
-                    type="button"
-                    onClick={removeImage}
-                    className="text-red-500 hover:text-red-700 font-bold text-xl select-none"
-                    title="Remove image"
-                  >
-                    ×
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <input
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full mb-3 px-3 py-2 rounded bg-gray-700 text-white"
-            />
-            {error && <p className="text-red-400 mb-2">{error}</p>}
-
-            <button
-              onClick={handleAddProject}
-              className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white font-semibold"
-            >
-              Add Project
-            </button>
-          </div>
-        )}
-
         <ul className="w-full max-w-md space-y-3">
           {projects.map((project, i) => (
             <li
@@ -220,17 +78,11 @@ const ProjectManager = () => {
                   {project.name}
                 </span>
               </div>
-              <button
-                onClick={() => handleDeleteProject(i)}
-                title="Delete Project"
-                className="ml-4 text-red-500 hover:text-red-700 font-bold text-2xl select-none"
-              >
-                ×
-              </button>
             </li>
           ))}
         </ul>
       </div>
+
       <div className="mt-25">
         <Foter />
       </div>
