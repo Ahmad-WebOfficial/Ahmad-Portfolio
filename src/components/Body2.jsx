@@ -80,33 +80,23 @@ const About = () => {
         <div className="transition-all duration-500">
           {activeIndex === 0 ? (
             <div className="text-center mb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {["web", "mobile", "creative"].map((type) => (
+              {[
+                { type: "web", label: "Web Development", icon: "https://illustrations.popsy.co/gray/web-design.svg" },
+                { type: "mobile", label: "Mobile Development", icon: "https://illustrations.popsy.co/gray/app-launch.svg" },
+                { type: "creative", label: "Creative Projects", icon: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png" },
+              ].map(({ type, label, icon }) => (
                 <div
                   key={type}
                   className="flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-green-400 rounded-lg p-4 group"
                   onClick={() => setSelectedSkill(type)}
                 >
                   <img
-                    src={
-                      type === "web"
-                        ? "https://illustrations.popsy.co/gray/web-design.svg"
-                        : type === "mobile"
-                        ? "https://illustrations.popsy.co/gray/app-launch.svg"
-                        : "https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
-                    }
-                    className={`$ {
-                      type === "creative"
-                        ? "w-[11rem] md:w-[10.5rem] lg:w-[15rem] md:mt-12 lg:mt-15"
-                        : "w-[12rem] md:w-[15rem]"
-                    } opacity-90 transition-transform duration-300 group-hover:scale-110`}
+                    src={icon}
+                    className={`${type === "creative" ? "w-[11rem] md:w-[10.5rem] lg:w-[15rem] md:mt-12 lg:mt-15" : "w-[12rem] md:w-[15rem]"} opacity-90 transition-transform duration-300 group-hover:scale-110`}
                     alt={type + " icon"}
                   />
                   <p className="text-white mt-3 lg:text-2xl font-semibold">
-                    {type === "web"
-                      ? "Web Development"
-                      : type === "mobile"
-                      ? "Mobile Development"
-                      : "Creative Projects"}
+                    {label}
                   </p>
                 </div>
               ))}
@@ -114,15 +104,13 @@ const About = () => {
           ) : activeIndex === 1 ? (
             <div className="text-center px-4 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-green-400">
-                Demand Comparison
+                Web vs Mobile Development Demand
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                Web Development ki demand Mobile Development se zyada hai.
-                Lekin Mobile Development bhi tezi se grow kar rahi hai, khaaskar
-                Android aur iOS platforms ke liye apps banane ka scope barh raha hai.
+                🌐 Web Development ki demand 📱 Mobile Development se zyada hai. Magar mobile ka scope bhi barh raha hai — khaaskar Android/iOS apps ke liye.
               </p>
               <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200">
-                Dono ka combination full-stack ya cross-platform developer banne ke liye ideal hai.
+                Ratio: <span className="text-green-400 font-semibold">60% Web</span> vs <span className="text-blue-400 font-semibold">40% Mobile</span>.
               </p>
             </div>
           ) : (
@@ -131,15 +119,39 @@ const About = () => {
                 Top Companies
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                Pakistan mein WordPress aur development fields mein kuch top companies hain:
+                🌍 Global Top Companies:
               </p>
-              <ul className="list-disc list-inside mt-3 text-left text-gray-300 max-w-md mx-auto space-y-2">
-                <li>Systems Limited</li>
-                <li>10Pearls</li>
-                <li>NetSol Technologies</li>
-                <li>TRG Pakistan</li>
-                <li>Confiz</li>
-              </ul>
+              <div className="flex flex-wrap justify-center gap-6 my-4">
+                <div className="flex flex-col items-center">
+                  <img src="https://cdn.worldvectorlogo.com/logos/google-icon.svg" alt="Google" className="w-12 h-12" />
+                  <span className="mt-2 text-sm">Google</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="https://cdn.worldvectorlogo.com/logos/microsoft.svg" alt="Microsoft" className="w-12 h-12" />
+                  <span className="mt-2 text-sm">Microsoft</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="https://cdn.worldvectorlogo.com/logos/meta-2.svg" alt="Meta" className="w-12 h-12" />
+                  <span className="mt-2 text-sm">Meta</span>
+                </div>
+              </div>
+              <p className="text-lg md:text-xl leading-relaxed text-gray-200">
+                🇵🇰 Top Companies in Pakistan:
+              </p>
+              <div className="flex flex-wrap justify-center gap-6 my-4">
+                <div className="flex flex-col items-center">
+                  <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Systems_Limited_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
+                  <span className="mt-1 text-sm">Systems Limited</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="https://www.10pearls.com/wp-content/uploads/2021/01/10Pearls-Logo.png" alt="10Pearls" className="w-20 h-10 object-contain" />
+                  <span className="mt-1 text-sm">10Pearls</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Netsol_logo.svg/2560px-Netsol_logo.svg.png" alt="NetSol" className="w-20 h-10 object-contain" />
+                  <span className="mt-1 text-sm">NetSol</span>
+                </div>
+              </div>
             </div>
           )}
         </div>
