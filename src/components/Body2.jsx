@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img11 from "../images/img111.png";
+import img55 from "../images/img111.png";
 
 
 const About = () => {
@@ -184,7 +184,7 @@ const About = () => {
 
 <div className="min-h-[400px] bg-[#1b1a1b] flex flex-col items-center p-5 md:p-10 text-white">
   <img
-    src={img11}
+    src={img55}
     alt="User Icon"
     className="w-60 h-60 md:w-80 md:h-80 rounded-full object-contain object-center bg-white p-2 shadow-lg border-4 border-white"
   />
