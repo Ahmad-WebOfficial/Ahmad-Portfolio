@@ -127,15 +127,15 @@ const About = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
-                  <img src="https://cdn.worldvectorlogo.com/logos/google-icon.svg" alt="Google" className="w-12 h-12" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="w-12 h-12 object-contain" />
                   <span className="mt-2 text-sm">Google (World)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://cdn.worldvectorlogo.com/logos/microsoft.svg" alt="Microsoft" className="w-12 h-12" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" className="w-12 h-12 object-contain" />
                   <span className="mt-2 text-sm">Microsoft (World)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://cdn.worldvectorlogo.com/logos/meta-2.svg" alt="Meta" className="w-12 h-12" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo.svg" alt="Meta" className="w-12 h-12 object-contain" />
                   <span className="mt-2 text-sm">Meta (World)</span>
                 </div>
               </div>
@@ -210,4 +210,12 @@ const About = () => {
         <p className="text-center text-gray-300 max-w-2xl mb-10">
           I'm a passionate developer with a strong ambition to become a
           full-stack developer. I’m currently sharpening my skills across both
-          front-end and back-end technologies. My future plan is
+          front-end and back-end technologies. My future plan is to build my own
+          software house and contribute to impactful digital solutions.
+        </p>
+      </div>
+    </>
+  );
+};
+
+export default About;
