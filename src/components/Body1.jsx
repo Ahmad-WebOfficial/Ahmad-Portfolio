@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img88 from "../images/img88.jpg"; // ✅ Import image properly
+import img22 from "../images/img88.jpg"; 
 
 const HeroSection = () => {
   return (
@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
         <img
           alt="Muhammad Ahmad Fridi"
-          src={img88} // ✅ Use imported variable here
+          src={img22} // ✅ Use imported variable here
           className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
         />
       </div>
