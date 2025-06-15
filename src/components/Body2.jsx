@@ -143,11 +143,11 @@ const About = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
-                  <img src="https://companieslogo.com/img/orig/SYS.PK-95e4fe9e.png?t=1633510547" alt="Systems Limited" className="w-20 h-10 object-contain" />
+                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Systems_Ltd_logo.png/320px-Systems_Ltd_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">Systems Limited (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://pbs.twimg.com/profile_images/1419934379616759811/kLoNFzrR_400x400.jpg" alt="10Pearls" className="w-20 h-10 object-contain" />
+                  <img src="https://media.licdn.com/dms/image/D4D0BAQG9b6QeTceM6g/company-logo_200_200/0/1698653048410/10pearls_logo?e=1723680000&v=beta&t=9nx1zyYqAylhgp9NjJhJdW90nmgMiIVV9CdhBeUV3cY" alt="10Pearls" className="w-20 h-10 object-contain rounded-full" />
                   <span className="mt-1 text-sm">10Pearls (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
