@@ -13,7 +13,7 @@ const ProjectManager = () => {
     {
       name: "Digital Clock",
       url: "https://perfect-clock-ten.vercel.app/",
-      image: null,
+      image: "https://via.placeholder.com/80?text=Clock", // 👈 Replace with real image if needed
     },
   ]);
 
@@ -48,33 +48,26 @@ const ProjectManager = () => {
       <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-8">Project Manager</h1>
 
-        <ul className="w-full max-w-md space-y-3">
+        <ul className="w-full max-w-md space-y-4">
           {projects.map((project, i) => (
             <li
               key={i}
-              className="flex justify-between items-center bg-gray-800 p-3 rounded hover:bg-green-700 transition cursor-pointer"
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:bg-green-700 transition cursor-pointer"
+              onClick={() => {
+                if (project.url && project.url !== "#") {
+                  window.open(project.url, "_blank");
+                }
+              }}
+              title={`Open ${project.name}`}
             >
-              <div
-                className="flex items-center flex-1 space-x-4"
-                onClick={() => {
-                  if (project.url && project.url !== "#") {
-                    window.open(project.url, "_blank");
-                  }
-                }}
-                title={`Open ${project.name}`}
-              >
-                {project.image && (
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-14 h-14 object-cover rounded-lg border border-gray-700"
-                  />
-                )}
-
-                <span className="text-lg font-semibold text-white">
-                  {project.name}
-                </span>
-              </div>
+              {project.name === "Digital Clock" && project.image && (
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-16 h-16 object-cover rounded border border-white"
+                />
+              )}
+              <span className="text-lg font-semibold">{project.name}</span>
             </li>
           ))}
         </ul>
