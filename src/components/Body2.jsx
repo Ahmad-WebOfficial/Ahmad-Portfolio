@@ -21,7 +21,7 @@ const About = () => {
     { name: "To Do App", url: "https://perfect-todo-iota.vercel.app/" },
   ]);
 
-  const mobileProjects = [{ name: "Job Portal App", url: "#" }];
+  const mobileProjects = [{ name: "Job Pgggortal App", url: "#" }];
 
   const skillProjects = {
     web: { title: "Web Projects", projects: webProjects },
