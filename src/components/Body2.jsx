@@ -5,14 +5,14 @@ const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedSkill, setSelectedSkill] = useState(null);
 
-  const [webProjects, setWebProjects] = useState([
+  const [webProjects] = useState([
     { name: "Nexus News", url: "https://perfect-nexcent.vercel.app/" },
     { name: "Nexcent", url: "https://perfect-nexcent.vercel.app/" },
     { name: "Perfect Graphs", url: "https://perfect-graphs.vercel.app/" },
     { name: "Cleaning", url: "https://perfect-cleanic.vercel.app/" },
   ]);
 
-  const [creativeProjects, setCreativeProjects] = useState([
+  const [creativeProjects] = useState([
     { name: "Digital Clock", url: "https://perfect-clock-ten.vercel.app/" },
     { name: "To Do App", url: "https://perfect-todo-iota.vercel.app/" },
   ]);
@@ -26,40 +26,6 @@ const About = () => {
   };
 
   const ProjectList = ({ title, projects, onBack, tech, note }) => {
-    const [adding, setAdding] = useState(false);
-    const [name, setName] = useState("");
-    const [url, setUrl] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-
-    const handleAddProject = () => {
-      if (password !== "MuhammadAhmadFridi@511") {
-        setError("Incorrect password!");
-        return;
-      }
-      if (!name.trim() || !url.trim()) {
-        setError("Please enter both name and URL.");
-        return;
-      }
-
-      let fullUrl = url.trim();
-      if (!fullUrl.startsWith("http://") && !fullUrl.startsWith("https://")) {
-        fullUrl = "https://" + fullUrl;
-      }
-
-      const newProject = { name: name.trim(), url: fullUrl };
-
-      if (selectedSkill === "creative") {
-        setCreativeProjects((prev) => [...prev, newProject]);
-      }
-
-      setName("");
-      setUrl("");
-      setPassword("");
-      setError("");
-      setAdding(false);
-    };
-
     return (
       <div className="fixed inset-0 bg-black text-white z-50 flex flex-col items-center justify-center px-6 py-10 overflow-auto">
         <button
@@ -72,98 +38,26 @@ const About = () => {
 
         <h2 className="text-2xl md:text-3xl font-bold mb-6">{title}</h2>
 
-        {!adding && selectedSkill === "creative" && (
-          <button
-            onClick={() => setAdding(true)}
-            className="absolute top-6 right-6 bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white font-semibold"
-          >
-            Add Project
-          </button>
-        )}
-
-        {!adding ? (
-          <ul className="text-left max-w-md mx-auto space-y-3 text-xl mb-6 relative">
-            {projects.map((project, i) => (
-              <li
-                key={i}
-                className="bg-gray-800 px-4 py-2 rounded-lg shadow flex justify-between items-center hover:bg-green-600 transition relative"
+        <ul className="text-left max-w-md mx-auto space-y-3 text-xl mb-6 relative">
+          {projects.map((project, i) => (
+            <li
+              key={i}
+              className="bg-gray-800 px-4 py-2 rounded-lg shadow flex justify-between items-center hover:bg-green-600 transition relative"
+            >
+              <span
+                className="cursor-pointer"
+                onClick={() => {
+                  if (project.url && project.url !== "#") {
+                    window.open(project.url, "_blank");
+                  }
+                }}
+                title={`Open ${project.name}`}
               >
-                <span
-                  className="cursor-pointer"
-                  onClick={() => {
-                    if (project.url && project.url !== "#") {
-                      window.open(project.url, "_blank");
-                    }
-                  }}
-                  title={`Open ${project.name}`}
-                >
-                  🔹 {project.name}
-                </span>
-
-                {selectedSkill === "creative" && (
-                  <span
-                    onClick={() => {
-                      const enteredPassword = prompt("Enter password to delete project:");
-                      if (enteredPassword === "MuhammadAhmadFridi@511") {
-                        setCreativeProjects((prev) => prev.filter((_, idx) => idx !== i));
-                      } else {
-                        alert("Incorrect password!");
-                      }
-                    }}
-                    title="Delete Project"
-                    className="cursor-pointer text-red-500 hover:text-red-700 font-bold text-2xl select-none ml-4"
-                  >
-                    ×
-                  </span>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div className="mt-6 w-full max-w-md bg-gray-900 p-6 rounded-lg shadow relative">
-            <button
-              onClick={() => setAdding(false)}
-              className="absolute top-4 right-4 text-3xl text-red-500 hover:text-red-700 font-bold select-none"
-              title="Cancel adding project"
-            >
-              ×
-            </button>
-
-            <h3 className="text-xl font-bold mb-4 text-green-400">
-              Add New Project
-            </h3>
-
-            <input
-              type="text"
-              placeholder="Project Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 rounded bg-gray-800 text-white mb-3"
-            />
-            <input
-              type="text"
-              placeholder="Project URL"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              className="w-full px-3 py-2 rounded bg-gray-800 text-white mb-3"
-            />
-            <input
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 rounded bg-gray-800 text-white mb-3"
-            />
-            {error && <p className="text-red-400 text-sm mb-2">{error}</p>}
-
-            <button
-              onClick={handleAddProject}
-              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded mt-2"
-            >
-              Add Project
-            </button>
-          </div>
-        )}
+                🔹 {project.name}
+              </span>
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-6 text-center text-lg text-gray-300 max-w-md space-y-2">
           <p>{note}</p>
@@ -189,7 +83,7 @@ const About = () => {
               {["web", "mobile", "creative"].map((type) => (
                 <div
                   key={type}
-                  className="flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                  className="flex flex-col items-center cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-green-400 rounded-lg p-4 group"
                   onClick={() => setSelectedSkill(type)}
                 >
                   <img
@@ -200,12 +94,11 @@ const About = () => {
                         ? "https://illustrations.popsy.co/gray/app-launch.svg"
                         : "https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
                     }
-                    className={`${
+                    className={`$ {
                       type === "creative"
-                        ? "w-[11rem] md:w-[10.5rem]lg:w-[15rem] md:mt-12 lg:mt-15"
+                        ? "w-[11rem] md:w-[10.5rem] lg:w-[15rem] md:mt-12 lg:mt-15"
                         : "w-[12rem] md:w-[15rem]"
-                    } opacity-90`}
-                    style={{ cursor: "pointer" }}
+                    } opacity-90 transition-transform duration-300 group-hover:scale-110`}
                     alt={type + " icon"}
                   />
                   <p className="text-white mt-3 lg:text-2xl font-semibold">
@@ -221,29 +114,32 @@ const About = () => {
           ) : activeIndex === 1 ? (
             <div className="text-center px-4 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-green-400">
-                Development Demand Comparison
+                Demand Comparison
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                Aaj ke dor mein{" "}
-                <span className="font-semibold text-white">
-                  Web Development
-                </span>{" "}
-                ki demand
-                <span className="text-green-400 font-semibold">
-                  {" "}
-                  Mobile Development
-                </span>{" "}
-                se zyada hai...
+                Web Development ki demand Mobile Development se zyada hai.
+                Lekin Mobile Development bhi tezi se grow kar rahi hai, khaaskar
+                Android aur iOS platforms ke liye apps banane ka scope barh raha hai.
+              </p>
+              <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200">
+                Dono ka combination full-stack ya cross-platform developer banne ke liye ideal hai.
               </p>
             </div>
           ) : (
             <div className="text-center px-4 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-green-400">
-                Top Companies in WordPress and Pakistan
+                Top Companies
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                Pakistan mein WordPress development mein kuch top companies hain...
+                Pakistan mein WordPress aur development fields mein kuch top companies hain:
               </p>
+              <ul className="list-disc list-inside mt-3 text-left text-gray-300 max-w-md mx-auto space-y-2">
+                <li>Systems Limited</li>
+                <li>10Pearls</li>
+                <li>NetSol Technologies</li>
+                <li>TRG Pakistan</li>
+                <li>Confiz</li>
+              </ul>
             </div>
           )}
         </div>
@@ -288,11 +184,13 @@ const About = () => {
         <img
           src={img1}
           alt="Muhammad Ahmad Fridi"
-          className="w-52 h-52 md:w-60 md:h-60 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
+          className="w-40 h-40 md:w-60 md:h-60 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
         />
+
         <h1 className="text-3xl md:text-4xl font-bold mb-3">
           Muhammad Ahmad Fridi
         </h1>
+
         <p className="text-center text-gray-300 max-w-2xl mb-10">
           I'm a passionate developer with a strong ambition to become a
           full-stack developer. I’m currently sharpening my skills across both
