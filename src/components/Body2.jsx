@@ -182,12 +182,13 @@ const About = () => {
         )}
       </section>
 
-      <div className="h-full bg-[#1b1a1b] flex flex-col mt-0 items-center p-5 md:p-10 text-white">
-       <img
-  src={img11}
-  alt="User Icon"
-  className="w-55 h-55 md:w-80 md:h-80 rounded-full object-cover object-top mb-0 shadow-lg border-4 border-white"
-/>
+    <div className="h-full bg-[#1b1a1b] flex flex-col mt-0 items-center p-5 md:p-10 text-white">
+  <img
+    src={img11}
+    alt="User Icon"
+    className="w-60 h-60 md:w-80 md:h-80 rounded-full object-contain mb-0 shadow-lg border-4 border-white"
+  />
+</div>
 
         <h1 className="text-3xl md:text-4xl font-bold mb-3">
           Muhammad Ahmad Fridi
