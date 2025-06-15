@@ -24,7 +24,7 @@ const HeroSection = () => {
         <img
           alt="Muhammad Ahmad Fridi"
           src={img22} // ✅ Use imported variable here
-          className="w-55 h-55 md:w-60 md:h-60 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
+          className="w-60 h-60 md:w-70 md:h-70 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
         />
       </div>
     </div>
