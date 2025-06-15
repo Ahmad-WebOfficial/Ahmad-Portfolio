@@ -7,10 +7,13 @@ const About = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
 
   const [webProjects] = useState([
-    { name: "Nexus News", url: "https://perfect-nexcent.vercel.app/" },
     { name: "Nexcent", url: "https://perfect-nexcent.vercel.app/" },
+    { name: "Nexus News", url: "https://pefect-news.vercel.app/" },
     { name: "Perfect Graphs", url: "https://perfect-graphs.vercel.app/" },
-    { name: "Cleaning", url: "https://perfect-cleanic.vercel.app/" },
+    { name: "Cleaning App", url: "https://wix-cleanic-project.vercel.app/" },
+    { name: "Api Product", url: "https://perfect-product-api.vercel.app/" },
+    { name: "Mejiwoo Fashion", url: "https://mejiwoo-fashion-project.vercel.app/" },
+
   ]);
 
   const [creativeProjects] = useState([
