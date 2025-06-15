@@ -144,7 +144,7 @@ const About = () => {
                </p>
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Systems_Ltd_logo.png/320px-Systems_Ltd_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
+                  <img src="https://www.bing.com/ck/a?!&&p=02ae57393db06c7dc0755abafb3e9e4a8fc5f660039cf9fc84d4e9912796a60fJmltdHM9MTc0OTg1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0b436014-1f55-6e5b-3e6e-76161e8e6f0d&u=a1L2ltYWdlcy9zZWFyY2g_cT1zeXN0ZW0rbGltaXRlZCtzb2Z0d2FyZStob3VzZStwaG90byZpZD1CNEZBMjQ0OEE2OTM0NzYwQkFDOUE4NkEzNzI3MEFDNDdENTAwNzdCJkZPUk09SUFDRklS&ntb=1" />
                   <span className="mt-1 text-sm">Systems Limited (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
