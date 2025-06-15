@@ -122,40 +122,8 @@ const About = () => {
                 Top Companies
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                🌍 Global Top Companies:
+                🌍 Global and Pakistani top companies list removed as per request.
               </p>
-              <div className="flex flex-wrap justify-center gap-6 my-4">
-                <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="w-12 h-12 object-contain" />
-                  <span className="mt-2 text-sm">Google (World)</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" className="w-12 h-12 object-contain" />
-                  <span className="mt-2 text-sm">Microsoft (World)</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="https://cdn-icons-png.flaticon.com/512/2504/2504903.png" alt="Meta" className="w-12 h-12 object-contain" />
-                  <span className="mt-2 text-sm">Meta (World)</span>
-                </div>
-              </div>
-              <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                🇵🇰 Top Companies in Pakistan:
-              </p>
-               </p>
-              <div className="flex flex-wrap justify-center gap-6 my-4">
-                <div className="flex flex-col items-center">
-                  <img src="https://www.bing.com/ck/a?!&&p=02ae57393db06c7dc0755abafb3e9e4a8fc5f660039cf9fc84d4e9912796a60fJmltdHM9MTc0OTg1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0b436014-1f55-6e5b-3e6e-76161e8e6f0d&u=a1L2ltYWdlcy9zZWFyY2g_cT1zeXN0ZW0rbGltaXRlZCtzb2Z0d2FyZStob3VzZStwaG90byZpZD1CNEZBMjQ0OEE2OTM0NzYwQkFDOUE4NkEzNzI3MEFDNDdENTAwNzdCJkZPUk09SUFDRklS&ntb=1" />
-                  <span className="mt-1 text-sm">Systems Limited (Pakistan)</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="https://companieslogo.com/img/orig/10P.OL_BIG.D-91f251c0.png?t=1648658363" alt="10Pearls" className="w-20 h-10 object-contain bg-white rounded" />
-                  <span className="mt-1 text-sm">10Pearls (Pakistan)</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="https://companieslogo.com/img/orig/NETSOL.BD_BIG.D-6f238cb4.png?t=1636696162" alt="NetSol" className="w-20 h-10 object-contain" />
-                  <span className="mt-1 text-sm">NetSol (Pakistan)</span>
-                </div>
-              </div>
             </div>
           )}
         </div>
