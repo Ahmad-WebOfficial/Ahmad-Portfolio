@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img1 from "../images/img99.jpg";
+import img1 from "../images/img88.jpg";
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,9 +49,7 @@ const About = () => {
 
       const newProject = { name: name.trim(), url: fullUrl };
 
-      if (selectedSkill === "web") {
-        setWebProjects((prev) => [...prev, newProject]);
-      } else if (selectedSkill === "creative") {
+      if (selectedSkill === "creative") {
         setCreativeProjects((prev) => [...prev, newProject]);
       }
 
@@ -60,19 +58,6 @@ const About = () => {
       setPassword("");
       setError("");
       setAdding(false);
-    };
-
-    const handleDeleteProject = (index) => {
-      const enteredPassword = prompt("Enter password to delete project:");
-      if (enteredPassword !== "MuhammadAhmadFridi@511") {
-        alert("Incorrect password!");
-        return;
-      }
-      if (selectedSkill === "web") {
-        setWebProjects((prev) => prev.filter((_, i) => i !== index));
-      } else if (selectedSkill === "creative") {
-        setCreativeProjects((prev) => prev.filter((_, i) => i !== index));
-      }
     };
 
     return (
@@ -87,15 +72,14 @@ const About = () => {
 
         <h2 className="text-2xl md:text-3xl font-bold mb-6">{title}</h2>
 
-        {!adding &&
-          (selectedSkill === "web" || selectedSkill === "creative") && (
-            <button
-              onClick={() => setAdding(true)}
-              className="absolute top-6 right-6 bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white font-semibold"
-            >
-              Add Project
-            </button>
-          )}
+        {!adding && selectedSkill === "creative" && (
+          <button
+            onClick={() => setAdding(true)}
+            className="absolute top-6 right-6 bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white font-semibold"
+          >
+            Add Project
+          </button>
+        )}
 
         {!adding ? (
           <ul className="text-left max-w-md mx-auto space-y-3 text-xl mb-6 relative">
@@ -116,9 +100,16 @@ const About = () => {
                   🔹 {project.name}
                 </span>
 
-                {(selectedSkill === "web" || selectedSkill === "creative") && (
+                {selectedSkill === "creative" && (
                   <span
-                    onClick={() => handleDeleteProject(i)}
+                    onClick={() => {
+                      const enteredPassword = prompt("Enter password to delete project:");
+                      if (enteredPassword === "MuhammadAhmadFridi@511") {
+                        setCreativeProjects((prev) => prev.filter((_, idx) => idx !== i));
+                      } else {
+                        alert("Incorrect password!");
+                      }
+                    }}
                     title="Delete Project"
                     className="cursor-pointer text-red-500 hover:text-red-700 font-bold text-2xl select-none ml-4"
                   >
@@ -242,29 +233,7 @@ const About = () => {
                   {" "}
                   Mobile Development
                 </span>{" "}
-                se zyada hai. Lekin Mobile Development bhi tezi se grow kar rahi
-                hai — khaaskar Android aur iOS platforms ke liye apps banane ka
-                scope din ba din barh raha hai.
-              </p>
-
-              <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200">
-                🌐 Global market analysis ke mutabiq, approx:
-                <br />
-                <span className="text-red-400 font-semibold">
-                  Web Development: 60–65%
-                </span>{" "}
-                demand
-                <br />
-                <span className="text-red-400 font-semibold">
-                  Mobile Development: 35–40%
-                </span>{" "}
-                demand
-              </p>
-
-              <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200">
-                Dono fields ka combination full-stack ya cross-platform
-                developer banne ke liye ideal hai. Companies ab aise developers
-                prefer karti hain jo har platform ke liye kaam kar saken.
+                se zyada hai...
               </p>
             </div>
           ) : (
@@ -273,20 +242,7 @@ const About = () => {
                 Top Companies in WordPress and Pakistan
               </h3>
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
-                Pakistan mein WordPress development mein kuch top companies hain
-                jo industry ko lead karti hain:
-              </p>
-              <ul className="list-disc list-inside mt-3 text-left text-gray-300 max-w-md mx-auto space-y-2">
-                <li>Systems Limited</li>
-                <li>10Pearls</li>
-                <li>NetSol Technologies</li>
-                <li>TRG Pakistan</li>
-                <li>Confiz</li>
-              </ul>
-              <p className="text-lg md:text-xl mt-4 leading-relaxed text-gray-200">
-                Ye companies WordPress development ke alawa, full-stack aur
-                custom software solutions mein bhi kaam karti hain aur Pakistan
-                ke top tech employers mein shumar hoti hain.
+                Pakistan mein WordPress development mein kuch top companies hain...
               </p>
             </div>
           )}
@@ -327,17 +283,16 @@ const About = () => {
           />
         )}
       </section>
+
       <div className="h-full bg-[#1b1a1b] flex flex-col mt-0 items-center p-5 md:p-10 text-white">
         <img
           src={img1}
           alt="Muhammad Ahmad Fridi"
-          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mb-4 shadow-lg border-4 border-white"
+          className="w-52 h-52 md:w-60 md:h-60 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
         />
-
         <h1 className="text-3xl md:text-4xl font-bold mb-3">
           Muhammad Ahmad Fridi
         </h1>
-
         <p className="text-center text-gray-300 max-w-2xl mb-10">
           I'm a passionate developer with a strong ambition to become a
           full-stack developer. I’m currently sharpening my skills across both
