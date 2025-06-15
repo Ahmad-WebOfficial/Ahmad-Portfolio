@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import img1 from "../images/img1.jpg";
 
 const HeroSection = () => {
-  const [currentImg, setCurrentImg] = useState(img1);
-  const [modalImg, setModalImg] = useState(null);
-
-  useEffect(() => {
-    const savedImg = localStorage.getItem("heroImageBase64");
-    if (savedImg) {
-      setCurrentImg(savedImg);
-    }
-  }, []);
-
-  const openModal = (imgUrl) => setModalImg(imgUrl);
-  const closeModal = () => setModalImg(null);
-
   return (
     <div className="flex flex-col md:flex-row items-center justify-between lg:p-30 px-8 py-16 bg-[#1b263b] min-h-screen">
       <div className="text-left space-y-4 md:w-1/2">
@@ -33,43 +19,13 @@ const HeroSection = () => {
         </Link>
       </div>
 
-      <div className="mt-8 md:mt-0 md:w-1/2 flex flex-col items-center">
-        <div className="w-80 h-80 rounded-full overflow-hidden shadow-lg">
-          <img
-            src={currentImg}
-            alt="Muhammad Ahmad Fridi"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* 👁️ Eye Icon Button */}
-        <button
-          onClick={() => openModal(currentImg)}
-          className="mt-4 text-white text-2xl hover:text-gray-300 transition"
-          aria-label="View Full Image"
-        >
-          👁️
-        </button>
+      <div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+        <img
+          alt="Muhammad Ahmad Fridi"
+          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover object-top mb-4 shadow-lg border-4 border-white"
+          src="/src/images/img88.jpg"
+        />
       </div>
-
-      {modalImg && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-          <div className="relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-[-0.8rem] right-[-0.3rem] text-white rounded-full p-2 text-3xl hover:text-white transition"
-              aria-label="Close Modal"
-            >
-              &times;
-            </button>
-            <img
-              src={modalImg}
-              alt="Full View"
-              className="max-h-[90vh] max-w-[90vw] rounded shadow-lg"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
