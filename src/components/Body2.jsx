@@ -186,7 +186,7 @@ const About = () => {
   <img
     src={img11}
     alt="User Icon"
-    className="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover object-center mb-0 shadow-lg border-4 border-white"
+    className="w-60 h-60 md:w-80 md:h-80 rounded-full object-contain object-center mb-0 shadow-lg border-4 border-white"
   />
 
   <h1 className="text-3xl md:text-4xl font-bold mt-5 mb-3">
