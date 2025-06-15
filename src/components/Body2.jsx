@@ -143,15 +143,15 @@ const About = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-6 my-4">
                 <div className="flex flex-col items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Systems_Ltd_logo.png/320px-Systems_Ltd_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
+                  <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Systems_Limited_logo.png" alt="Systems Limited" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">Systems Limited (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://media.licdn.com/dms/image/D4D0BAQG9b6QeTceM6g/company-logo_200_200/0/1698653048410/10pearls_logo?e=1723680000&v=beta&t=9nx1zyYqAylhgp9NjJhJdW90nmgMiIVV9CdhBeUV3cY" alt="10Pearls" className="w-20 h-10 object-contain rounded-full" />
+                  <img src="https://media.licdn.com/dms/image/C560BAQHrd9x0fAXYkw/company-logo_200_200/0/1630588794880?e=2147483647&v=beta&t=HE0UmkwUqt2vK-1d4bYEq-nJpX_BHb3Z_AHTFqJfJHE" alt="10Pearls" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">10Pearls (Pakistan)</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="https://seeklogo.com/images/N/netsol-technologies-logo-DBFEEA63D3-seeklogo.com.png" alt="NetSol" className="w-20 h-10 object-contain" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/NetSol_logo.svg/2560px-NetSol_logo.svg.png" alt="NetSol" className="w-20 h-10 object-contain" />
                   <span className="mt-1 text-sm">NetSol (Pakistan)</span>
                 </div>
               </div>
