@@ -94,7 +94,7 @@ const About = () => {
                     className={`${
                       type === "creative"
                         ? "w-[7rem] md:w-[8rem] lg:w-[9rem] md:mt-10 lg:mt-12"
-                        : "w-[12rem] md:w-[14rem]"
+                        : "w-[12rem] md:w-[15rem]"
                     } opacity-90 transition-transform duration-300 group-hover:scale-110`}
                     alt={type + " icon"}
                   />
